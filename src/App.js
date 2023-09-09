@@ -114,7 +114,10 @@ const App = () => {
       .then((result) => {
         // You can access user information from 'result.user'
         setUser(result.user);
-        console.log(result.user);
+        console.log(result);
+        console.log(result._tokenResponse.displayName);
+        const user = result._tokenResponse.displayName;
+        setUsername(user)
         toast.success("Logged in successfully!");
       })
       .catch((error) => {
